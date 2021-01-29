@@ -21,50 +21,27 @@ print("3 - Multiplicação")
 print("4 - Divisão")
 
 # Adicionar as funções input
-opt = input("\nEscolha a opção desejada: \n")
+while True:
+  opt = int(input("\nEscolha a opção desejada: \n"))
 
-numInput1 = int(input("\nDigite o primeiro número:"))
-numInput2 = int(input("\nDigite o segundo número:"))
+  if(opt>0 and opt<5):
+    a = int(input("\nDigite o primeiro número:"))
+    b = int(input("\nDigite o segundo número:"))
 
-# Definir cada operação:
-if opt == '1':
-    print("\n")
-    print(numInput1, "+", numInput2, "=", add(numInput1, numInput2))
-    print("\n")
+#Definir as funções resumidas (não é necessário adicionar print (\n) sempre)
+    if(opt==1):
+      print(a,"+",b,"=",add(a,b))
+    elif(opt==2):
+      print(a,"-",b,"=",subtract(a,b))
+    elif(opt==3):
+      print(a,"*",b,"=",multiply(a,b))
+    elif(opt==4):
+      print(a,"/",b,"=",divide(a,b))
+    else:
+      print(error())
+  elif(opt==0):
+    break
+  else:
+    print(error())
 
-elif opt == '2':
-    print("\n")
-    print(numInput1, "-", numInput2, "=", subtract(numInput1, numInput2))
-    print("\n")
-
-elif opt == '3':
-    print("\n")
-    print(numInput1, "x", numInput2, "=", multiply(numInput1, numInput2))
-    print("\n")
-
-elif opt == '4':
-    print("\n")
-    print(numInput1, "/", numInput2, "=", divide(numInput1, numInput2))
-    print("\n")
-
-else:
-    while opt > '4':
-        opt = input("\nOpção inválida, escolha novamente: \n")
-        numInput1 = int(input("\nDigite o primeiro número:"))
-        numInput2 = int(input("\nDigite o segundo número:"))
-        if opt == '1':
-            print("\n")
-            print(numInput1, "+", numInput2, "=", add(numInput1, numInput2))
-            print("\n")
-
-        elif opt == '2':
-            print("\n")
-            print(numInput1, "-", numInput2, "=", subtract(numInput1, numInput2))
-            print("\n")
-
-        elif opt == '3':
-            print("\n")
-            print(numInput1, "x", numInput2, "=", multiply(numInput1, numInput2))
-            print("\n")
-
-print ("Obrigado por usar a Calculator Obamis!")
+print("Obrigado por usar a Calculator Obamis!")
