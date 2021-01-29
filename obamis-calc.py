@@ -12,6 +12,8 @@ def multiply(x, y):
     return x * y
 def divide(x, y):
     return x / y
+def error():
+  return "Operação inválida."
 
 # Chamar os prints das funções iniciais
 print("\nSelecione o número da operação desejada: \n")
